@@ -21,31 +21,16 @@
 
 <body>
     <div id="app">
-        <div class="row">
-            <div class="col">
-                <x-header></x-header>
+        <x-navbar></x-navbar>
+        <main class="py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        @yield('content')
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            @if(Auth::check())
-                <div class="col-2">
-                    <x-sidebar></x-sidebar>
-                </div>
-            @endif
-            @if(Auth::check())
-                <div class="col-10">
-                    <main class="py-4">
-                        @yield('content')
-                    </main>
-                </div>
-                @else
-                <div class="col-12">
-                    <main class="py-4">
-                        @yield('content')
-                    </main>
-                </div>
-            @endif
-        </div>
+        </main>
     </div>
     @livewireScripts
     <script src="https://kit.fontawesome.com/149e6ebcdd.js" crossorigin="anonymous"></script>

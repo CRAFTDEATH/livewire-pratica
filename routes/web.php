@@ -19,7 +19,7 @@ use App\Http\Controllers\SupplierController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('home');
 });
 
 Auth::routes();
