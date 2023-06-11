@@ -17,6 +17,7 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     @livewireStyles
+
 </head>
 
 <body>
@@ -26,14 +27,21 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
+                        @auth
+                            @if (Route::currentRouteName() != 'home')
+                                <x-bread-crumb></x-bread-crumb>
+                            @endif
+                        @endauth
                         @yield('content')
                     </div>
                 </div>
             </div>
         </main>
     </div>
-    @livewireScripts
+
     <script src="https://kit.fontawesome.com/149e6ebcdd.js" crossorigin="anonymous"></script>
+    @livewireScripts
+
 </body>
 
 </html>

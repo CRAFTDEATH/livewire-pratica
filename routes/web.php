@@ -3,9 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\SaleController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\SupplierController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +24,16 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::resource('suppliers',SupplierController::class);
-Route::resource('products',ProductController::class);
-Route::resource('sales',SaleController::class);
+
+Route::view('/suppliers','suppliers.index')->name('suppliers.index');
+Route::view('/suppliers/create','suppliers.create')->name('suppliers.create');
+Route::view('/suppliers/edit','suppliers.edit')->name('suppliers.edit');
+
+Route::view('/products','products.index')->name('products.index');
+Route::view('/products/create','products.create')->name('products.create');
+Route::view('/products/edit','products.edit')->name('products.edit');
+
+Route::view('/sales','sales.index')->name('sales.index');
+Route::view('/sales/create','sales.create')->name('sales.create');
+Route::view('/sales/edit','sales.edit')->name('sales.edit');
+
