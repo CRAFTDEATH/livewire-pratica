@@ -1,5 +1,4 @@
 @props(['disabled' => null, 'selected' => null])
-
 <div>
     <label for="idestado" class="form-label">Estado:</label>
     <select class="form-select" name="state" {{ $disabled }}  x-data="{ states: [] }" x-init="states = await (await fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados')).json()">

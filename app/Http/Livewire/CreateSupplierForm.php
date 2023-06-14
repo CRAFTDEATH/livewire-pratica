@@ -15,6 +15,17 @@ class CreateSupplierForm extends Component
         'state' => 'required|size:2',
     ];
 
+    public function validateName(){
+        $this->validate([
+            'name' => 'required',
+        ]);
+    }
+    public function validateState(){
+        $this->validate([
+            'state' => 'required',
+        ]);
+    }
+
     public function submit(){
         $this->validate();
 

@@ -10,13 +10,17 @@ class ShowSupplierForm extends Component
     public $supplierId;
     public $name;
     public $state;
+    public $selectedState = '';
 
     public function mount($supplierId)
     {
         $this->supplierId = $supplierId;
         $supplier = Supplier::find($supplierId);
-        $this->name = $supplier->name;
-        $this->state = $supplier->state;
+        if ($supplier != null) {
+            $this->name = $supplier->name;
+            $this->state = $supplier->state;
+            $this->selectedState = $this->state;
+        }
     }
 
     public function render()

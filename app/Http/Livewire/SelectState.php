@@ -11,12 +11,14 @@ class SelectState extends Component
     public $selectedState;
     public $disabled;
 
-    public function mount($supplierId,$disabled)
+    public function mount($supplierId, $disabled)
     {
         $this->supplierId = $supplierId;
         $supplier = Supplier::find($this->supplierId);
-        $this->selectedState = $supplier->state;
-        $this->disabled = $disabled;
+        if ($supplier != null) {
+            $this->selectedState = $supplier->state;
+            $this->disabled = $disabled;
+        }
     }
     public function render()
     {

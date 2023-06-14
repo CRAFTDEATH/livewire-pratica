@@ -19,6 +19,9 @@
                 </template>
             </select>
         </div>
+        <div class="col-2 mb-3">
+            <button wire:click="clear" class="btn btn-light border"> <i class="bi bi-arrow-clockwise"></i> Recarregar</button>
+        </div>
     </div>
 
 

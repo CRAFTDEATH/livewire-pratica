@@ -16,8 +16,8 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    @livewireStyles
 
+    @livewireStyles
 </head>
 
 <body>
@@ -38,8 +38,8 @@
             </div>
         </main>
     </div>
-
     <script src="https://kit.fontawesome.com/149e6ebcdd.js" crossorigin="anonymous"></script>
+
     @livewireScripts
 
 </body>

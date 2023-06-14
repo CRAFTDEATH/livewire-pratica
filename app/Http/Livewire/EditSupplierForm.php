@@ -17,11 +17,28 @@ class EditSupplierForm extends Component
     ];
     public function mount($supplierId)
     {
+
         $this->supplierId = $supplierId;
         $supplier = Supplier::find($supplierId);
-        $this->name = $supplier->name;
-        $this->state = $supplier->state;
-        $this->selectedState = $this->state;
+        if ($supplier != null) {
+            $this->name = $supplier->name;
+            $this->state = $supplier->state;
+            $this->selectedState = $this->state;
+        }
+
+    }
+    public function validateName(){
+        $this->validate([
+            'name' => 'required',
+        ]);
+    }
+
+    public function change($state)
+    {
+        $this->selectedState = $state;
+        $this->validate([
+            'state' => 'required',
+        ]);
     }
     public function submit()
     {

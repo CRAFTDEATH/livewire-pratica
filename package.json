@@ -16,6 +16,9 @@
     "dependencies": {
         "alpinejs": "^3.12.2",
         "bootstrap-icons": "^1.10.5",
+        "jquery": "^3.7.0",
+        "jquery-validation": "^1.19.5",
+        "parsleyjs": "^2.9.2",
         "popper.js": "^1.16.1"
     }
 }
